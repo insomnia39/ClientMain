@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url : {
+    base: "https://www.google.com/",
+    profile: "https://appserviceprofilef39asc1.azurewebsites.net/",
+    event: "https://appserviceprofilef39asc1.azurewebsites.net/api/",
+    transaction: "https://function-transactionservice-f39asc1.azurewebsites.net/api/",
+    collection: ""
+  }
 };
 
 /*

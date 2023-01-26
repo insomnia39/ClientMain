@@ -1,0 +1,10 @@
+<div class="my-2 bg-light p-2 d-flex justify-content-between">
+    <div>
+        <button class="btn btn-sm me-2" routerLink="/event" [ngClass]="{'active': choose === 1}" (click)="updateChoose(1)">Event</button>
+        <button class="btn btn-sm me-2" routerLink="/collection" [ngClass]="{'active': choose === 2}" (click)="updateChoose(2)">Collection</button>
+        <button class="btn btn-sm me-2" routerLink="/transaction" [ngClass]="{'active': choose === 3}" (click)="updateChoose(3)">Transaction</button>
+    </div>
+    <div>
+        <button class="btn btn-sm btn-outline-danger me-2" (click)="login()">Relogin</button>
+    </div>
+</div>
