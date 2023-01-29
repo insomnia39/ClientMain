@@ -11,9 +11,11 @@
             </div>
         </div>
         <button 
-            class="btn btn-outline-dark mt-2" 
-            style="max-height: 54px; max-width: 54px; min-width: 54px; min-height: 54px;"
+            class="btn border shadow-sm mt-2"
+            style="max-height: 54px; max-width: 54px; min-width: 54px; min-height: 54px; background-image: url({{profile?.profilePicture?.url}}); background-size: cover; background-position: center;"
+            (click)="file.click()"
         >
-            A</button>
+        <input type="file" class="d-none" accept="image/png, image/gif, image/jpeg" (change)="handleFileInput($event)" #file>
+    </button>
     </div>
 </div>

@@ -51,8 +51,16 @@ export class ProfileService{
     })
   }
 
-  setProfilePicture() {
-
+  setProfilePicture(file: File) {
+    console.log("Uploading");
+    let formData: FormData = new FormData();
+    formData.append('file', file);
+    formData.append('username', this.profile.username || "");
+    this.http.post(this.url.profile + "profile/picture", formData).subscribe(
+      () => {
+        this.getProfile(this.profile.username || "");
+      }
+    );
   }
 
   setLocalProfile() {
