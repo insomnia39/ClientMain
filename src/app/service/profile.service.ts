@@ -8,7 +8,7 @@ import { IProfile } from '../model/IProfile';
   providedIn: 'root'
 })
 export class ProfileService{
-  url = environment.url.profile;
+  url = environment.url;
   profile: IProfile = {}
   qProfile?: BehaviorSubject<IProfile> = new BehaviorSubject<IProfile>(this.profile);
 
@@ -31,7 +31,7 @@ export class ProfileService{
 
   getProfile(username: string) {
     let params = new HttpParams().set("username", username);
-    this.http.get<IProfile>(this.url + "profile", { params: params }).subscribe(p => {
+    this.http.get<IProfile>(this.url.profile + "profile/cread", { params: params }).subscribe(p => {
       this.qProfile?.next(p);
       this.getPoint(p.id || "");
       this.setLocalProfile();
@@ -39,7 +39,16 @@ export class ProfileService{
   }
 
   getPoint(profileId: string) {
+    this.http.get<IProfile>(this.url.transaction + "profile/"+ profileId +"/getProfile").subscribe(p => {
+      this.profile.point = p.point;
+      this.qProfile?.next(this.profile);
+    });
+  }
 
+  addPoint() {
+    this.http.get(this.url.transaction + "profile/" + this.profile.id + "/addPoint").subscribe(p => {
+      this.getPoint(this.profile.id || "");
+    })
   }
 
   setProfilePicture() {

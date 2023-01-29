@@ -6,9 +6,9 @@ export const environment = {
   production: false,
   url : {
     base: "https://www.google.com/",
-    profile: "https://appserviceprofilef39asc1.azurewebsites.net/",
-    event: "https://appserviceprofilef39asc1.azurewebsites.net/api/",
-    transaction: "https://function-transactionservice-f39asc1.azurewebsites.net/api/",
+    profile: "https://w1-profile.azurewebsites.net/",
+    event: "https://f1-event.azurewebsites.net/api/",
+    transaction: "https://f1-transaction.azurewebsites.net/api/",
     collection: ""
   }
 };

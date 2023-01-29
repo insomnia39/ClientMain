@@ -1,0 +1,16 @@
+.win {
+    box-shadow: 0px 0px 24px rgba(98, 0, 255, 0.5);
+}
+
+.lose {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+.choosen {
+    box-shadow: 0px 0px 24px rgba(255, 0, 0, 0.5);
+}
+
+.bold-border {
+    border-width: 2px;
+    border-color: rgb(16, 16, 16);
+}

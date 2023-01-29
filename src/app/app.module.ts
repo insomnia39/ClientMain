@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { HeaderComponent } from './component/header/header.component';
 import { NavComponent } from './component/nav/nav.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { ErrorInterceptor } from './interceptor/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,11 @@ import { FooterComponent } from './component/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
