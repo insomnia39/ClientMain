@@ -3,7 +3,7 @@
 }
 
 .lose {
-    background-color: rgba(128, 128, 128, 0.2);
+    filter: grayscale();
 }
 
 .choosen {
@@ -13,4 +13,8 @@
 .bold-border {
     border-width: 2px;
     border-color: rgb(16, 16, 16);
+}
+
+.no-click {
+    pointer-events: none;
 }

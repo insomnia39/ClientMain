@@ -5,11 +5,12 @@ import { environment } from 'src/environments/environment';
 import { IEvent } from '../model/IEvent';
 import { IPolling } from '../model/IPolling';
 
-interface IRunningEventDto {
+interface ILatestEventDto {
   event?: IEvent;
   pollings?: IPolling[];
   latestTotalPolling?: number;
   latestUsername?: string;
+  isActive: boolean;
 }
 
 @Injectable({
@@ -17,9 +18,9 @@ interface IRunningEventDto {
 })
 export class EventService  {
   url = environment.url.event;
-  runningEvent: IRunningEventDto = {}
-  runningEvent$ : BehaviorSubject<IRunningEventDto> = new BehaviorSubject<IRunningEventDto>(this.runningEvent);
+  latestEvent: ILatestEventDto = { isActive: false };
+  latestEvent$ : BehaviorSubject<ILatestEventDto> = new BehaviorSubject<ILatestEventDto>(this.latestEvent);
   constructor(private http: HttpClient) {
-    http.get<IRunningEventDto>(this.url+"/event/getRunningEvent").subscribe(p => this.runningEvent$.next(p));
+    http.get<ILatestEventDto>(this.url+"/event/getLatestEvent").subscribe(p => this.latestEvent$.next(p));
   }
 }

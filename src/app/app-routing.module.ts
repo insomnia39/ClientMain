@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CollectionComponent } from './component/collection/collection.component';
 import { EventComponent } from './component/event/event.component';
-import { TransactionComponent } from './transaction/transaction.component';
+import { TransactionComponent } from './component/transaction/transaction.component';
 
 const routes: Routes = [
   {path: 'event', component:EventComponent},

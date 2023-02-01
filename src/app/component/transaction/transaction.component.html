@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Point</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let transaction of pointTransactions">
+        <tr>
+          <td>{{transaction.id}}</td>
+          <td>{{transaction.title}}</td>
+          <td class="text-end" [class.text-danger]="transaction.totalPoint < 0" [class.text-success]="transaction.totalPoint > 0">{{transaction.totalPoint > 0 ? '+' : ''}}{{transaction.totalPoint}}</td>
+        </tr>
+    </tbody>
+</table>

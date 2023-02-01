@@ -16,6 +16,7 @@ export class ProfileService{
     this.qProfile?.subscribe(p => this.profile = p);
     this.init();
   }
+  
 
   init(){
     this.getLocalProfile();
@@ -72,6 +73,7 @@ export class ProfileService{
     if(!localProfile) return;
     let nextProfile = <IProfile> JSON.parse(localProfile);
     this.qProfile?.next(nextProfile);
+    this.getPoint(nextProfile.id || "");
   }
 
   removeLocalProfile(){

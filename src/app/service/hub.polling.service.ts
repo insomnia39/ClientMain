@@ -16,6 +16,7 @@ export class HubPollingService {
   private hubConnection?: HubConnection;
   private url = environment.url.event;
 
+  isConnected = false;
   latestUsername$ : BehaviorSubject<string> = new BehaviorSubject<string>("Votes Received");
   latesPollingNumber$ : BehaviorSubject<number> = new BehaviorSubject<number>(100);
   
@@ -23,6 +24,7 @@ export class HubPollingService {
   }
 
   async connect() {
+    if(this.isConnected) return;
     this.hubConnection = new HubConnectionBuilder().withUrl(this.url).build();
     this.hubConnection.on("newPolling", (msg: IMessage) => {
       console.log(msg);
@@ -30,6 +32,7 @@ export class HubPollingService {
       this.latesPollingNumber$.next(msg.LatestPoint);
     });
     await this.hubConnection.start();
+    this.isConnected = true;
   }
 
   polling(profileId: string, eventId: string, pollingId: string) {

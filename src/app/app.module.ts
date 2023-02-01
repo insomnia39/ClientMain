@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './component/login/login.component';
 import { EventComponent } from './component/event/event.component';
 import { CollectionComponent } from './component/collection/collection.component';
-import { TransactionComponent } from './transaction/transaction.component';
+import { TransactionComponent } from './component/transaction/transaction.component';
 import { HeaderComponent } from './component/header/header.component';
 import { NavComponent } from './component/nav/nav.component';
 import { FooterComponent } from './component/footer/footer.component';

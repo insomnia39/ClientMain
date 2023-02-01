@@ -5,4 +5,6 @@ export interface IPolling {
     title: string;
     optionNumber: number;
     content: IContent;
+    totalPoint: number;
+    isWin: boolean;
 }

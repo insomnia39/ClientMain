@@ -8,5 +8,6 @@ import { ProfileService } from './service/profile.service';
 })
 export class AppComponent {
   constructor(private profileService: ProfileService){
+    this.profileService.getLocalProfile();
   }
 }
