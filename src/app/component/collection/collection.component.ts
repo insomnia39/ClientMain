@@ -9,23 +9,23 @@ import { TransactionService } from 'src/app/service/transaction.service';
     <div>
       <div class="d-flex justify-content-between mb-4 pb-4">
         <div class="w-100 me-4 text-middle">
-          <h3>Ceritanya Beli PhotoCard Rendom sebiji</h3>
-          <small>Belinya pake duit beneran, trus ntar poinnya nambah gitu, yg ini nambah 2 point loh</small>
+          <h3>1 PhotoCard - Lunar New Year Edition</h3>
+          <small>Rp 49000 | +2 point</small>
         </div>
         <button class="btn btn-outline-dark" style="width: 100px;" (click)="addPoint(2)">Buy</button>
       </div>
       <div class="d-flex justify-content-between mb-4 pb-4">
         <div class="w-100 me-4 text-middle">
-          <h3>Ini juga PhotoCard rendom, tapi 2 biji</h3>
-          <small>Kalo ini nambah 5 point ehe</small>
+          <h3>2 PhotoCard - Lunar New Year Edition</h3>
+          <small>Rp 89.000 | +5 point</small>
         </div>
         <button class="btn btn-outline-dark" style="width: 100px;" (click)="addPoint(5)">Buy</button>
       </div>
       <div class="d-flex justify-content-between mb-4">
         <div class="w-100 me-4 text-middle">
-          <h3>Nah, ini beli album, ga rendom tapi, dan sebiji</h3>
-          <small>Nambah 20 pointnya kaka</small>
-        </div>
+          <h3>Album A - First Edition</h3>
+          <small>Rp 349.000 | +20 point</small>
+        </div>  
         <button class="btn btn-outline-dark" style="width: 100px;" (click)="addPoint(20)">Buy</button>
       </div>
     </div>

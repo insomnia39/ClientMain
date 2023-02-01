@@ -13,7 +13,11 @@ export class HeaderComponent implements OnInit {
   fileToUpload: File | null = null;
   
   constructor(private profileService: ProfileService) {
-    this.profileService.qProfile?.subscribe(p => this.profile = p);
+    this.profileService.qProfile?.subscribe(p => {
+      this.profile = p;
+      if(this.profile.profilePicture && this.profile.profilePicture.url) return;
+      this.profile.profilePicture = { url : '../../../assets/default.jpg'}
+    });
   }
 
   ngOnInit(): void {
